@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
+import { SectionTheme } from "@/components/SectionTheme";
 
 export const metadata: Metadata = {
   title: "Hana Benko",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Nav />
-        <main>{children}</main>
+        <SectionTheme>
+          <Nav />
+          <main>{children}</main>
+        </SectionTheme>
       </body>
     </html>
   );

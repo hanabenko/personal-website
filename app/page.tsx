@@ -15,7 +15,6 @@ export default function Home() {
       <article className="home-intro">
         <div className="home-intro-grid">
           <div className="home-intro-text">
-            <p className="home-title-rule" aria-hidden="true">⸻</p>
             <h1 className="heading home-title">Hey there!</h1>
             <p className="home-lead">
               I&apos;m Hana Benko, a computer science student at{" "}

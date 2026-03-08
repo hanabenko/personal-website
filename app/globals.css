@@ -18,6 +18,28 @@
   --radius-sm: 8px;
 }
 
+/* Section-specific accent colors */
+[data-section="home"] {
+  --color-accent: #6b4c9a;
+  --color-accent-soft: #9f7aca;
+}
+[data-section="projects"] {
+  --color-accent: #3b7dd6;
+  --color-accent-soft: #6ba3e8;
+}
+[data-section="creative"] {
+  --color-accent: #2d7a4a;
+  --color-accent-soft: #5aad7a;
+}
+[data-section="blog"] {
+  --color-accent: #b91c5c;
+  --color-accent-soft: #d94a7a;
+}
+[data-section="services"] {
+  --color-accent: #c96b24;
+  --color-accent-soft: #d98a45;
+}
+
 * {
   box-sizing: border-box;
 }
