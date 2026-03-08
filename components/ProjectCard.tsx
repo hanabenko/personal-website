@@ -20,9 +20,10 @@ export function ProjectCard({ title, tagline, date, url, github, description, im
       className="project-image"
       src={image}
       alt={title}
-      width={200}
-      height={200}
+      width={400}
+      height={400}
       sizes="200px"
+      quality={90}
     />
   ) : (
     <div className="project-image project-image--placeholder" aria-hidden>

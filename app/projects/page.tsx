@@ -9,7 +9,7 @@ const projects = [
   {
     title: "CMU Bulletin",
     tagline: "Campus events and announcements in one place.",
-    date: "2024–present",
+    date: "2025–present",
     url: "https://cmubulletin.com",
     github: "https://github.com/hanabenko/cmubulletin",
     description:
@@ -17,9 +17,19 @@ const projects = [
     image: "/cmu-bulletin.png",
   },
   {
+    title: "LMYA MultiSport",
+    tagline: "Video content and tools for LMYA community coaches, players, and parents.",
+    date: "2020–2024",
+    url: "https://apps.apple.com/us/app/lmya-multisport/id1514895433",
+    github: null,
+    description:
+      "Developed a cross-platform iOS/Android training app for the Lafayette-Moraga Youth Association, serving 1,000+ yearly users. Secured $10K project funding through technical presentations to organization leadership. Managed App Store and TestFlight deployments, releases, and QA.",
+    image: "/lmya-multisport.png",
+  },
+  {
     title: "The Bias Lens",
     tagline: "Making bias in news visible and understandable.",
-    date: "2024",
+    date: "2025",
     url: "https://devpost.com/software/the-bias-lens",
     github: null,
     description:
@@ -27,24 +37,44 @@ const projects = [
     image: "/the-bias-lens.png",
   },
   {
+    title: "CMUEats",
+    tagline: "CMU dining locations and menus in one place.",
+    date: "2025",
+    url: "https://cmueats.com",
+    github: "https://github.com/ScottyLabs/cmueats",
+    description:
+      "A Vite web app that keeps track of dining location statuses and menus across Carnegie Mellon. I worked on brainstorming better user experience features and collaborating with dining.",
+    image: "/cmueats.png",
+  },
+  {
     title: "Teacher Dataset Scraper",
     tagline: "Structuring public data for research recruitment.",
-    date: "2024",
+    date: "2025",
     url: null,
     github: "https://github.com/hanabenko",
     description:
       "Scripts that scrape and structure public datasets to identify 500+ teachers for research recruitment. Built to support study outreach for the CATS lab so we can connect with educators who might benefit from our tools. Python.",
-    image: null,
+    image: "/teacher-scraper.png",
   },
   {
-    title: "Cache Simulator and Malloc Implementation",
-    tagline: "Systems-level work on hardware and memory.",
-    date: "2024",
-    url: null,
+    title: "This website",
+    tagline: "Woah, recursive...?",
+    date: "2026–present",
+    url: "https://www.hanabenko.com/",
+    github: "https://github.com/hanabenko/personal-website",
+    description:
+      "This portfolio site, built with Next.js, TypeScript, and CSS. Source code on GitHub.",
+    image: "/this-website.png",
+  },
+  {
+    title: "Scratch projects",
+    tagline: "Where it started.",
+    date: "2016",
+    url: "https://scratch.mit.edu/users/Hana10/",
     github: null,
     description:
-      "A CPU cache simulator (set-associative, LRU eviction) and a dynamic memory allocator. Systems-level work to understand how hardware and memory really behave — the kind of project that makes everything else you build make more sense. C.",
-    image: null,
+      "Check out Escape the Dragon and many more projects I worked on as a young programmer! Most of these games and interactive projects are from 2016.",
+    image: "/scratch-projects.png",
   },
 ];
 
