@@ -36,7 +36,7 @@ export default function Home() {
               .
             </p>
             <p className="home-bio">
-              Outside of school I like beautiful sights, sports, and {" "}
+              Outside of school, I like beautiful sights, sports, and {" "}
               <Link href="/creative">making things</Link>
               .
             </p>
