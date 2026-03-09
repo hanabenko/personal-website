@@ -8,72 +8,117 @@ export const metadata = {
 const projects = [
   {
     title: "CMU Bulletin",
-    tagline: "Campus events and announcements in one place.",
+    tagline: "Campus events and announcements in one place",
     date: "2025–present",
     url: "https://cmubulletin.com",
     github: "https://github.com/hanabenko/cmubulletin",
     description:
-      "A web platform for campus events and announcements so students can find and share what's going on at CMU. Built and shipped with a team; it's the kind of tool I wish had existed when I was figuring out where to show up. Built with React and Firebase.",
+      "CMU Bulletin is a platform where students can discover and share campus events. Instead of announcements being scattered across group chats, Slack channels, and mailing lists, everything lives in one searchable feed.",
+    role: [
+      "Co-developed the full-stack web application with a team",
+      "Built core frontend components and event posting flows",
+      "Helped design the event submission and moderation system",
+      "Shipped the first working version used by students",
+    ],
+    techStack: "React · Firebase · TypeScript",
     image: "/cmu-bulletin.png",
   },
   {
     title: "LMYA MultiSport",
-    tagline: "Video content and tools for LMYA community coaches, players, and parents.",
+    tagline: "Training resources for youth coaches, players, and parents",
     date: "2020–2024",
     url: "https://apps.apple.com/us/app/lmya-multisport/id1514895433",
     github: null,
     description:
-      "Developed a cross-platform iOS/Android training app for the Lafayette-Moraga Youth Association, serving 1,000+ yearly users. Secured $10K project funding through technical presentations to organization leadership. Managed App Store and TestFlight deployments, releases, and QA.",
+      "LMYA MultiSport is a mobile app for the Lafayette-Moraga Youth Association that provides training videos, drills, and resources for youth sports programs. Coaches and players can browse structured practice content and learn skills outside of practice.",
+    role: [
+      "Designed and developed the cross-platform mobile application",
+      "Delivered technical presentations to organization leadership to secure $10K in funding",
+      "Managed the App Store and TestFlight release pipeline",
+      "Handled QA, updates, and deployment for production releases",
+    ],
+    techStack: "React Native · iOS · Android · App Store Connect · TestFlight",
     image: "/lmya-multisport.png",
   },
   {
     title: "The Bias Lens",
-    tagline: "Making bias in news visible and understandable.",
+    tagline: "Making bias in news visible and explainable",
     date: "2025",
     url: "https://devpost.com/software/the-bias-lens",
     github: null,
     description:
-      "An AI system that analyzes articles for ideological bias and framing, then explains how language choices can shape perception. Built to make bias in news more visible and understandable, not just \"good or bad.\" Python, LLMs, and NLP.",
+      "The Bias Lens analyzes news articles and highlights language that may introduce ideological framing. Instead of labeling an article as simply \"biased,\" it explains how specific wording choices can influence how a story is perceived.",
+    role: [
+      "Designed and implemented the article analysis pipeline",
+      "Built prompts and processing logic to identify framing and ideological signals",
+      "Developed a system to generate readable explanations of bias indicators",
+    ],
+    techStack: "Python · LLMs · NLP",
     image: "/the-bias-lens.png",
   },
   {
     title: "CMUEats",
-    tagline: "CMU dining locations and menus in one place.",
+    tagline: "CMU dining locations and menus in one place",
     date: "2025",
     url: "https://cmueats.com",
     github: "https://github.com/ScottyLabs/cmueats",
     description:
-      "A Vite web app that keeps track of dining location statuses and menus across Carnegie Mellon. I worked on brainstorming better user experience features and collaborating with dining.",
+      "CMUEats helps students quickly check which campus dining locations are open and what's on the menu. The app aggregates dining information into a single interface designed for quick mobile use between classes.",
+    role: [
+      "Helped design product features and user experience improvements",
+      "Collaborated with the team and CMU dining on data access",
+      "Contributed to frontend development and feature planning",
+    ],
+    techStack: "Vite · JavaScript · Web APIs",
     image: "/cmueats.png",
   },
   {
     title: "Teacher Dataset Scraper",
-    tagline: "Structuring public data for research recruitment.",
+    tagline: "Structuring public datasets for research outreach",
     date: "2025",
     url: null,
     github: "https://github.com/hanabenko",
     description:
-      "Scripts that scrape and structure public datasets to identify 500+ teachers for research recruitment. Built to support study outreach for the CATS lab so we can connect with educators who might benefit from our tools. Python.",
+      "This project collects and structures publicly available datasets to identify teachers who may be interested in participating in education research studies. The goal is to make it easier for researchers to connect with educators who could benefit from new tools.",
+    role: [
+      "Built Python scripts to scrape and structure public data sources",
+      "Cleaned and standardized datasets for researcher use",
+      "Produced a structured dataset of 500+ teachers for outreach",
+    ],
+    techStack: "Python · Web scraping · Data processing",
     image: "/teacher-scraper.png",
   },
   {
-    title: "This website",
-    tagline: "Woah, recursive...?",
+    title: "This Website",
+    tagline: "The site you're currently on",
     date: "2026–present",
     url: "https://www.hanabenko.com/",
     github: "https://github.com/hanabenko/personal-website",
     description:
-      "This portfolio site, built with Next.js, TypeScript, and CSS. Source code on GitHub.",
+      "This portfolio site is where I share projects, writing, and experiments. I built it to be simple, fast, and easy to update as I keep building new things.",
+    role: [
+      "Designed and implemented the entire site",
+      "Built reusable project and blog components",
+      "Deployed and maintain the site",
+    ],
+    techStack: "Next.js · TypeScript · CSS",
     image: "/this-website.png",
   },
   {
-    title: "Scratch projects",
-    tagline: "Where it started.",
+    title: "Scratch Projects",
+    tagline: "Where it all started",
     date: "2016",
     url: "https://scratch.mit.edu/users/Hana10/",
     github: null,
     description:
-      "Check out Escape the Dragon and many more projects I worked on as a young programmer! Most of these games and interactive projects are from 2016.",
+      "My earliest programming projects were built in Scratch — mostly small games and interactive experiments. They're simple, but they're also where I first learned how programming could turn ideas into something playable.",
+    role: [
+      "Small games and interactive animations",
+      "Logic systems using Scratch blocks",
+      "Early experiments with game design",
+    ],
+    roleLabel: "What I built",
+    techStack: undefined,
     image: "/scratch-projects.png",
   },
 ];
@@ -88,6 +133,9 @@ export default function ProjectsPage() {
           </header>
 
           <div className="post-content">
+            <p className="post-intro">
+              Not everything I build is big or polished, but every project here started with a problem I wanted to solve. Some were built with teams, some on my own, and most taught me something new along the way.
+            </p>
             <div className="projects">
               {projects.map((p) => (
                 <ProjectCard
@@ -99,6 +147,9 @@ export default function ProjectsPage() {
                   github={p.github}
                   description={p.description}
                   image={p.image}
+                  role={p.role}
+                  roleLabel={p.roleLabel}
+                  techStack={p.techStack}
                 />
               ))}
             </div>

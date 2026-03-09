@@ -389,7 +389,15 @@ a:hover {
 }
 
 .post-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-intro {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0 0 2rem;
+  max-width: 52ch;
 }
 
 .post-title {
@@ -540,7 +548,39 @@ a:hover {
   font-size: 0.9375rem;
   color: var(--color-text);
   line-height: 1.65;
-  margin: 0;
+  margin: 0 0 0.5rem;
+}
+
+.project-description p:last-of-type {
+  margin-bottom: 0;
+}
+
+.project-role-label,
+.project-tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+  margin: 0.75rem 0 0.25rem;
+  display: block;
+}
+
+.project-role-list {
+  margin: 0 0 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.project-role-list li {
+  margin-bottom: 0.2rem;
+}
+
+.project-tech-stack {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin: 0.25rem 0 0 !important;
 }
 
 @media (max-width: 520px) {

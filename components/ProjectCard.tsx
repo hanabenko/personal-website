@@ -10,9 +10,12 @@ type ProjectCardProps = {
   github: string | null;
   description: string;
   image: string | null;
+  role?: string[];
+  roleLabel?: string;
+  techStack?: string;
 };
 
-export function ProjectCard({ title, tagline, date, url, github, description, image }: ProjectCardProps) {
+export function ProjectCard({ title, tagline, date, url, github, description, image, role, roleLabel = "My role", techStack }: ProjectCardProps) {
   const href = url ?? github ?? null;
 
   const imageContent = image ? (
@@ -56,6 +59,22 @@ export function ProjectCard({ title, tagline, date, url, github, description, im
         </div>
         <div className="project-description">
           <p>{description}</p>
+          {role && role.length > 0 && (
+            <>
+              <p className="project-role-label">{roleLabel}</p>
+              <ul className="project-role-list">
+                {role.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          {techStack && (
+            <p className="project-tech-stack">
+              <span className="project-tech-label">Tech stack</span>
+              {" "}{techStack}
+            </p>
+          )}
         </div>
       </div>
     </article>
