@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <div className="page page--home">
       <article className="home-intro">
+        <h1 className="heading home-title">Hey there!</h1>
         <div className="home-intro-grid">
           <div className="home-intro-text">
-            <h1 className="heading home-title">Hey there!</h1>
             <p className="home-lead">
               I&apos;m Hana Benko, a computer science student at{" "}
               <a href={CMU_URL} target="_blank" rel="noopener noreferrer">Carnegie Mellon</a>
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
           </div>
           <div className="home-photo-wrap-right">
-            <div className="home-photo home-photo--horizontal">
+            <div className="home-photo home-photo--vertical">
               <Photo
                 src="/hana.png"
                 alt="Hana"
