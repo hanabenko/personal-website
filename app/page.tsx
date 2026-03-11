@@ -36,9 +36,7 @@ export default function Home() {
               .
             </p>
             <p className="home-bio">
-              Outside of school, I like beautiful sights, sports, and {" "}
-              <Link href="/creative">making things</Link>
-              .
+              Outside of school, I like beautiful sights, sports, and making things.
             </p>
             <p className="home-cta-intro">
               While you&apos;re here, you might as well check out my projects or read the blog.
