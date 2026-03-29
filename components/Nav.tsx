@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -34,6 +35,7 @@ export function Nav() {
             </Link>
           );
         })}
+        <ThemeToggle />
       </nav>
       <div className="nav-stripe" />
     </header>

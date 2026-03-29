@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectsList } from "@/components/ProjectsList";
 
 export const metadata = {
   title: "Projects | Hana Benko",
@@ -22,6 +22,7 @@ const projects = [
     ],
     techStack: "React · Firebase · TypeScript",
     image: "/cmu-bulletin.png",
+    tags: ["Web", "Open Source"],
   },
   {
     title: "LMYA MultiSport",
@@ -39,6 +40,7 @@ const projects = [
     ],
     techStack: "React Native · iOS · Android · App Store Connect · TestFlight",
     image: "/lmya-multisport.png",
+    tags: ["Mobile"],
   },
   {
     title: "The Bias Lens",
@@ -55,6 +57,7 @@ const projects = [
     ],
     techStack: "Python · LLMs · NLP",
     image: "/the-bias-lens.png",
+    tags: ["AI/ML", "Research", "Python"],
   },
   {
     title: "CMUEats",
@@ -71,6 +74,7 @@ const projects = [
     ],
     techStack: "Vite · JavaScript · Web APIs",
     image: "/cmueats.png",
+    tags: ["Web", "Open Source"],
   },
   {
     title: "Teacher Dataset Scraper",
@@ -87,6 +91,7 @@ const projects = [
     ],
     techStack: "Python · Web scraping · Data processing",
     image: "/teacher-scraper.png",
+    tags: ["Research", "Python"],
   },
   {
     title: "This Website",
@@ -103,6 +108,7 @@ const projects = [
     ],
     techStack: "Next.js · TypeScript · CSS",
     image: "/this-website.png",
+    tags: ["Web"],
   },
   {
     title: "Scratch Projects",
@@ -136,23 +142,7 @@ export default function ProjectsPage() {
             <p className="post-intro">
               Not everything I build is big or polished, but every project here started with a problem I wanted to solve. Some were built with teams, some on my own, and most taught me something new along the way.
             </p>
-            <div className="projects">
-              {projects.map((p) => (
-                <ProjectCard
-                  key={p.title}
-                  title={p.title}
-                  tagline={p.tagline}
-                  date={p.date}
-                  url={p.url}
-                  github={p.github}
-                  description={p.description}
-                  image={p.image}
-                  role={p.role}
-                  roleLabel={p.roleLabel}
-                  techStack={p.techStack}
-                />
-              ))}
-            </div>
+            <ProjectsList projects={projects} />
           </div>
         </article>
       </div>

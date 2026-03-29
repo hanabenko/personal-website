@@ -38,20 +38,10 @@ export default function Home() {
             <p className="home-bio">
               Outside of school, I like beautiful sights, sports, and making things.
             </p>
-            <p className="home-cta-intro">
-              While you&apos;re here, you might as well check out my projects or read the blog.
-            </p>
-
-        <div className="home-ctas">
-          <Link href="/projects" className="home-cta-card">
-            <span className="home-cta-label">Want to check out my projects?</span>
-            <span className="home-cta-arrow">Projects →</span>
-          </Link>
-          <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" className="home-cta-card">
-            <span className="home-cta-label">Read my latest blog post!</span>
-            <span className="home-cta-arrow">Blog →</span>
-          </a>
-        </div>
+            <div className="home-ctas">
+              <Link href="/projects" className="home-cta-btn">Projects →</Link>
+              <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" className="home-cta-btn">Blog →</a>
+            </div>
           </div>
           <div className="home-photo-wrap-right">
             <div className="home-photo home-photo--vertical">
