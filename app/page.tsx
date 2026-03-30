@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Photo } from "@/components/Photo";
 import { FooterIcons } from "@/components/FooterIcons";
+import { HomeCtas } from "@/components/HomeCtas";
 
 const BLOG_URL = "https://hanabenko.github.io";
 const CMU_URL = "https://www.cmu.edu/";
@@ -38,10 +38,7 @@ export default function Home() {
             <p className="home-bio">
               Outside of school, I like beautiful sights, sports, and making things.
             </p>
-            <div className="home-ctas">
-              <Link href="/projects" className="home-cta-btn">Projects →</Link>
-              <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" className="home-cta-btn">Blog →</a>
-            </div>
+            <HomeCtas blogUrl={BLOG_URL} />
           </div>
           <div className="home-photo-wrap-right">
             <div className="home-photo home-photo--vertical">

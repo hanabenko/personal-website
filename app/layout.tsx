@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { SectionTheme } from "@/components/SectionTheme";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 export const metadata: Metadata = {
   title: "Hana Benko",
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SectionTheme>
-          <Nav />
-          <main>{children}</main>
-        </SectionTheme>
+        <PostHogProvider>
+          <SectionTheme>
+            <Nav />
+            <main>{children}</main>
+          </SectionTheme>
+        </PostHogProvider>
       </body>
     </html>
   );

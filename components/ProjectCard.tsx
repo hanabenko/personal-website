@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import posthog from "posthog-js";
 
 type ProjectCardProps = {
   title: string;
@@ -30,7 +31,14 @@ export function ProjectCard({
       {/* Full-width image at top */}
       <div className="project-image-box">
         {imageHref ? (
-          <a className="project-image-link" href={imageHref} target="_blank" rel="noopener noreferrer" aria-label={`View ${title}`}>
+          <a
+            className="project-image-link"
+            href={imageHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${title}`}
+            onClick={() => posthog.capture("project_image_clicked", { project_title: title, href: imageHref })}
+          >
             {image
               ? <Image className="project-image" src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 50vw" quality={90} />
               : <div className="project-image project-image--placeholder" aria-hidden>Project</div>
@@ -59,7 +67,13 @@ export function ProjectCard({
           </div>
           <button
             className="project-toggle"
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => {
+              const next = !expanded;
+              setExpanded(next);
+              if (next) {
+                posthog.capture("project_expanded", { project_title: title, project_tags: tags });
+              }
+            }}
             aria-expanded={expanded}
             aria-label={expanded ? "Collapse details" : "Expand details"}
           >
@@ -87,8 +101,8 @@ export function ProjectCard({
             )}
             {(url || github) && (
               <div className="project-links">
-                {url && <a href={url} target="_blank" rel="noopener noreferrer" className="project-link">View project →</a>}
-                {github && <a href={github} target="_blank" rel="noopener noreferrer" className="project-link">GitHub →</a>}
+                {url && <a href={url} target="_blank" rel="noopener noreferrer" className="project-link" onClick={() => posthog.capture("project_link_clicked", { project_title: title, link_type: "project", href: url })}>View project →</a>}
+                {github && <a href={github} target="_blank" rel="noopener noreferrer" className="project-link" onClick={() => posthog.capture("project_link_clicked", { project_title: title, link_type: "github", href: github })}>GitHub →</a>}
               </div>
             )}
           </div>

@@ -1,3 +1,7 @@
+"use client";
+
+import posthog from "posthog-js";
+
 const iconSize = 22;
 
 const icons = {
@@ -67,6 +71,7 @@ export function FooterIcons() {
           className="footer-icon"
           title={name}
           aria-label={name}
+          onClick={() => posthog.capture("social_link_clicked", { link_name: name, href })}
         >
           {icons[icon]}
         </a>
