@@ -139,5 +139,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .env.local
 .claude 
-package-lock.json
+package-lock.jsoneve 
 package.json
+.gitignore
