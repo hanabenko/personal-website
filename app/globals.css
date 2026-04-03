@@ -672,3 +672,9 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 .heading { font-family: var(--font-display); font-weight: 500; font-style: italic; letter-spacing: -0.02em; }
 .label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); }
+
+/* ── Blog ──────────────────────────────────────────────── */
+.blog-external-link {
+  display: block;
+  border-left: 4px solid var(--color-accent);
+}
