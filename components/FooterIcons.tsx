@@ -79,3 +79,23 @@ export function FooterIcons() {
     </div>
   );
 }
+
+export function SocialLinks() {
+  return (
+    <div className="social-links">
+      {items.map(({ name, href, icon }) => (
+        <a
+          key={icon}
+          href={href}
+          target={href.startsWith("mailto:") ? undefined : "_blank"}
+          rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+          className="social-link-btn"
+          onClick={() => posthog.capture("social_link_clicked", { link_name: name, href })}
+        >
+          <span className="social-link-icon">{icons[icon]}</span>
+          <span>{name}</span>
+        </a>
+      ))}
+    </div>
+  );
+}
