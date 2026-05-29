@@ -25,13 +25,13 @@ export function HomeBio() {
   return (
     <>
       <p className="home-lead">
-        I&apos;m a CS student at{" "}
+        I&apos;m a CS+ML student at{" "}
         <Org
           href="https://www.cmu.edu/"
           label="Carnegie Mellon"
           title="Carnegie Mellon University"
           role="Computer Science Student"
-          desc="Studying CS in Pittsburgh. Expected graduation December 2027."
+          desc="Studying CS and ML in Pittsburgh. Expected graduation December 2027."
         />
         , currently interning at{" "}
         <Org
@@ -47,7 +47,7 @@ export function HomeBio() {
           label="HCII"
           title="Human-Computer Interaction Institute"
           role="Researcher"
-          desc="CMU's HCI research lab. I work on projects at the intersection of people and technology."
+          desc="CMU's HCI research lab. I work on projects at the intersection of education and AI."
         />
         .
       </p>
@@ -56,17 +56,17 @@ export function HomeBio() {
         <Org
           href="https://www.scottylabs.org/"
           label="Labrador"
-          title="Labrador — ScottyLabs"
+          title="Labrador in ScottyLabs"
           role="Director"
-          desc="ScottyLabs is CMU's largest software club (1,000+ members, 8 executives). Labrador is a 100+ person committee running 20+ projects per semester — I manage the 12-person leadership team."
+          desc="ScottyLabs is CMU's largest software club (1,000+ members, 8 executives). Labrador is a 100+ person committee running 20+ projects per semester; I manage the 12-person leadership team keeping the ship running."
         />
         , serve as exec on the{" "}
         <Org
           href="https://scsbusinessoffice.cs.cmu.edu/advisory-committees/index.html"
-          label="SCS Student Advisory Committee"
-          title="SCS Student Advisory Committee"
+          label="SCS SAC"
+          title="SCS Student Advisory Committee (SAC)"
           role="Executive"
-          desc="Student governance body for CMU's School of Computer Science, representing CS undergrads in school decisions."
+          desc="Student governance body for CMU's School of Computer Science, representing CS undergrads in school decisions. This will be my second year as an executive member."
         />
         , and teach through{" "}
         <Org
@@ -74,13 +74,14 @@ export function HomeBio() {
           label="Code in Place"
           title="Code in Place"
           role="Section Leader"
-          desc="Stanford's free intro CS course, open to anyone worldwide. I teach Python to a section of students."
+          desc="Stanford's free intro CS course, with 20k+ students, open to anyone worldwide. I have taught for two years, teaching beginner Python to a section of 15 students."
         />
         .
       </p>
       <p className="home-lead home-lead--muted">
-        Born in Croatia, raised in the East Bay. Based in Pittsburgh until at least December 2027.
+        I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until December 2027, when I expect to graduate.
         Outside of school, I like beautiful sights, sports, and making things.
+
       </p>
     </>
   );

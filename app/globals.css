@@ -381,10 +381,14 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 /* Mobile */
 @media (max-width: 580px) {
   .page--home { padding: 2rem 1.25rem 4rem; }
-  .home-intro { flex-direction: row; gap: 1rem; align-items: flex-start; }
-  .home-intro-photo { width: 90px; aspect-ratio: 3/4; flex-shrink: 0; }
+  .home-intro { flex-direction: column; gap: 1.25rem; }
+  .home-intro-photo {
+    order: -1;
+    width: 115px;
+    aspect-ratio: 3/4;
+    flex-shrink: 0;
+  }
   .home-name { font-size: 1.65rem; }
-  /* Tooltips: flip to right-aligned on mobile to avoid left-edge overflow */
   .org-tooltip { left: auto; right: 0; min-width: 170px; max-width: 220px; }
 }
 
@@ -408,12 +412,13 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 .post-header::after { display: none; }
 
 .post-title {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
   margin: 0;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--color-text);
   display: block;
 }
