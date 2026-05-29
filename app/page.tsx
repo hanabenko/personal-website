@@ -15,7 +15,6 @@ export default function Home() {
           <h1 className="home-name">
             Hana <span className="home-name-accent">Benko</span>
           </h1>
-          <p className="home-tagline">CS student · researcher · builder</p>
           <HomeBio />
           <HomeCtas blogUrl={BLOG_URL} />
         </div>

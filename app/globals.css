@@ -196,14 +196,14 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 .home-lead a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
 .home-lead a:hover { opacity: 0.8; }
 
-/* Photo — natural, simple border */
+/* Photo */
 .home-intro-photo {
   position: relative;
   width: 155px;
   flex-shrink: 0;
   aspect-ratio: 3/4;
   overflow: hidden;
-  border: 1px solid var(--color-border-light);
+  box-shadow: 6px 6px 0 var(--color-accent);
 }
 
 .home-intro-photo img { object-position: center 15% !important; }

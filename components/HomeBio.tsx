@@ -74,13 +74,13 @@ export function HomeBio() {
           role="Computer Science Student"
           desc="Studying CS and ML in Pittsburgh. Expected graduation December 2027."
         />
-        , currently interning at{" "}
+        , soon interning at{" "}
         <Org
           href="https://daytona.io"
           label="Daytona"
           title="Daytona"
           role="Go-to-Market Intern"
-          desc="Open-source dev environment platform. I work on partnerships and collaborations around compute infrastructure for AI agent workflows."
+          desc="Open-source dev environment platform. I will work on the social and technical side of partnerships and collaborations around compute infrastructure for AI agent workflows."
         />
         {" "}and doing HCI research at{" "}
         <Org
@@ -119,7 +119,7 @@ export function HomeBio() {
         />
         .
       </p>
-      <p className="home-lead home-lead--muted">
+      <p className="home-lead">
         I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until December 2027, when I expect to graduate.
         Outside of school, I like beautiful sights, sports, and making things.
       </p>
