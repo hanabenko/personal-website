@@ -12,60 +12,74 @@ const DEANS_ADVISORY_URL = "https://scsbusinessoffice.cs.cmu.edu/advisory-commit
 export default function Home() {
   return (
     <div className="page--home">
-      {/* Full-width headline with ruled borders */}
-      <h1 className="home-title">Hey there!</h1>
 
-      {/* Newspaper body: text column | photo column */}
-      <div className="home-body-grid">
-        <div className="home-body-text">
+      {/* Intro: bio left, photo right */}
+      <div className="home-intro">
+        <div className="home-intro-text">
+          <h1 className="home-name">
+            Hana <span className="home-name-accent">Benko</span>
+          </h1>
+          <p className="home-tagline">CS student · researcher · builder</p>
           <p className="home-lead">
-            I&apos;m Hana Benko, a computer science student at{" "}
+            I&apos;m a computer science student at{" "}
             <a href={CMU_URL} target="_blank" rel="noopener noreferrer">Carnegie Mellon</a>
             {" "}interested in building thoughtful and useful things.
           </p>
-          <p className="home-bio">
-            I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until December 2027, when I expect to graduate.
-          </p>
-          <p className="home-bio">
-            I work in human–computer interaction research through the{" "}
-            <a href={HCII_URL} target="_blank" rel="noopener noreferrer">CMU HCII</a>
-            {", "}teach Python as a section leader for{" "}
-            <a href={CODE_IN_PLACE_URL} target="_blank" rel="noopener noreferrer">Stanford Code in Place</a>
-            {", and help run technical programs with "}
-            <a href={SCOTTYLABS_URL} target="_blank" rel="noopener noreferrer">ScottyLabs</a>
-            {". I also serve on the "}
-            <a href={DEANS_ADVISORY_URL} target="_blank" rel="noopener noreferrer">School of Computer Science Dean&apos;s Student Advisory Committee</a>
-            .
-          </p>
-          <p className="home-bio">
+          <p className="home-lead">
+            Born in Croatia, raised in the East Bay. Based in Pittsburgh until at least December 2027.
             Outside of school, I like beautiful sights, sports, and making things.
           </p>
           <HomeCtas blogUrl={BLOG_URL} />
         </div>
 
-        <aside className="home-body-photo">
-          <div className="home-photo home-photo--vertical">
-            <Photo
-              src="/hana.png"
-              alt="Hana"
-              fill
-              placeholderLabel=""
-              sizes="(max-width: 768px) 100vw, min(360px, 35vw)"
-              quality={92}
-              priority
-              objectFit="contain"
-            />
-          </div>
+        <aside className="home-intro-photo">
+          <Photo
+            src="/hana.png"
+            alt="Hana"
+            fill
+            placeholderLabel=""
+            sizes="(max-width: 580px) 100vw, 155px"
+            quality={92}
+            priority
+            objectFit="cover"
+          />
         </aside>
       </div>
 
+      {/* Currently — pill buttons */}
+      <div className="home-currently">
+        <span className="home-currently-label">Currently</span>
+        <div className="home-role-pills">
+          <a href={HCII_URL} className="home-role-pill" target="_blank" rel="noopener noreferrer">
+            <span className="home-role-pill-type">Research</span>
+            <span className="home-role-pill-at">at</span>
+            CMU HCII
+          </a>
+          <a href={CODE_IN_PLACE_URL} className="home-role-pill" target="_blank" rel="noopener noreferrer">
+            <span className="home-role-pill-type">Teaching</span>
+            <span className="home-role-pill-at">at</span>
+            Code in Place
+          </a>
+          <a href={SCOTTYLABS_URL} className="home-role-pill" target="_blank" rel="noopener noreferrer">
+            <span className="home-role-pill-type">Leadership</span>
+            <span className="home-role-pill-at">at</span>
+            ScottyLabs
+          </a>
+          <a href={DEANS_ADVISORY_URL} className="home-role-pill" target="_blank" rel="noopener noreferrer">
+            <span className="home-role-pill-type">Committee</span>
+            <span className="home-role-pill-at">at</span>
+            SCS Dean&apos;s Advisory
+          </a>
+        </div>
+      </div>
+
       <section className="home-connect">
-        <span className="home-connect-label">Find me online</span>
+        <span className="home-connect-label">Online</span>
         <SocialLinks />
       </section>
 
       <footer className="home-footer">
-        <p className="home-footer-copy">© {new Date().getFullYear()} Hana Benko. All rights reserved.</p>
+        <p className="home-footer-copy">© {new Date().getFullYear()} Hana Benko.</p>
       </footer>
     </div>
   );

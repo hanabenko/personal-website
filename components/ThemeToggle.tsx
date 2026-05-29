@@ -10,7 +10,9 @@ export function ThemeToggle() {
     setMounted(true);
     const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setDark(saved === "dark" || (!saved && prefersDark));
+    const isDark = saved === "dark" || (!saved && prefersDark);
+    setDark(isDark);
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
   }, []);
 
   const toggle = () => {
