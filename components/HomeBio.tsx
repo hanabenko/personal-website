@@ -38,8 +38,8 @@ export function HomeBio() {
           href="https://daytona.io"
           label="Daytona"
           title="Daytona"
-          role="Software Engineering Intern"
-          desc="Open-source development environment manager. I'm on the engineering team building developer tooling."
+          role="Go-to-Market Intern"
+          desc="Open-source dev environment platform. I work on partnerships and collaborations around compute infrastructure for AI agent workflows."
         />
         {" "}and doing HCI research at{" "}
         <Org
@@ -58,7 +58,7 @@ export function HomeBio() {
           label="Labrador"
           title="Labrador — ScottyLabs"
           role="Director"
-          desc="A project within ScottyLabs, CMU's student-run tech org. I lead the Labrador team."
+          desc="ScottyLabs is CMU's largest software club (1,000+ members, 8 executives). Labrador is a 100+ person committee running 20+ projects per semester — I manage the 12-person leadership team."
         />
         , serve as exec on the{" "}
         <Org
