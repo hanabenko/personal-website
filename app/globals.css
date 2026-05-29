@@ -61,13 +61,13 @@ body {
 }
 
 /* ── Per-section accent colors ──────────────────────────── */
-[data-section="home"]     { --color-accent: #c20066; --color-accent-soft: #e0007a; }
-[data-section="projects"] { --color-accent: #1a52d4; --color-accent-soft: #3570f0; }
-[data-section="blog"]     { --color-accent: #7c3aed; --color-accent-soft: #9b5aff; }
+[data-section="home"]     { --color-accent: #c2410c; --color-accent-soft: #ea580c; }
+[data-section="projects"] { --color-accent: #0f766e; --color-accent-soft: #0d9488; }
+[data-section="blog"]     { --color-accent: #6d28d9; --color-accent-soft: #7c3aed; }
 
-[data-theme="dark"] [data-section="home"]     { --color-accent: #e8007a; --color-accent-soft: #ff2d9a; }
-[data-theme="dark"] [data-section="projects"] { --color-accent: #4d78f0; --color-accent-soft: #6b95ff; }
-[data-theme="dark"] [data-section="blog"]     { --color-accent: #9b5aff; --color-accent-soft: #b480ff; }
+[data-theme="dark"] [data-section="home"]     { --color-accent: #fb923c; --color-accent-soft: #fdba74; }
+[data-theme="dark"] [data-section="projects"] { --color-accent: #2dd4bf; --color-accent-soft: #5eead4; }
+[data-theme="dark"] [data-section="blog"]     { --color-accent: #a78bfa; --color-accent-soft: #c4b5fd; }
 
 a { color: var(--color-accent); text-decoration: none; }
 a:hover { color: var(--color-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
@@ -239,56 +239,78 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   margin: 2.5rem 0;
 }
 
-/* Currently — pill buttons */
-.home-currently {
-  margin-top: 2.5rem;
+/* ── Bio org tooltips ───────────────────────────────────── */
+.org-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
-.home-currently-label {
-  display: block;
-  font-size: 0.75rem;
+.org-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.org-link:hover {
+  color: var(--color-accent);
+  text-decoration-style: solid;
+  text-decoration: underline;
+}
+
+.org-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 50;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  padding: 0.65rem 0.875rem;
+  min-width: 190px;
+  max-width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.12s, visibility 0.12s;
+  white-space: normal;
+}
+
+.org-wrap:hover .org-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.org-tooltip-name {
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.65rem;
+  line-height: 1.3;
 }
 
-.home-role-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.home-role-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.38rem 0.875rem;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border-light);
-  border-radius: 999px;
-  text-decoration: none;
-  color: var(--color-text);
-  font-size: 0.8125rem;
-  line-height: 1;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
-  white-space: nowrap;
-}
-
-.home-role-pill:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background: var(--color-bg-card-hover);
-  text-decoration: none;
-}
-
-.home-role-pill-type {
-  font-weight: 500;
-  color: var(--color-accent);
-}
-
-.home-role-pill-at {
-  color: var(--color-muted);
+.org-tooltip-role {
   font-size: 0.75rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.org-tooltip-desc {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-top: 0.2rem;
+}
+
+.home-lead--muted {
+  color: var(--color-muted);
+  font-size: 0.875rem;
 }
 
 /* Connect / social */
@@ -359,11 +381,11 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 /* Mobile */
 @media (max-width: 580px) {
   .page--home { padding: 2rem 1.25rem 4rem; }
-  .home-intro { flex-direction: column-reverse; gap: 1.5rem; }
-  .home-intro-photo { width: 100%; aspect-ratio: 4/3; }
-  .home-intro-photo img { object-position: center 20% !important; }
-  .home-role-pills { gap: 0.4rem; }
-  .home-role-pill { font-size: 0.75rem; padding: 0.32rem 0.75rem; }
+  .home-intro { flex-direction: row; gap: 1rem; align-items: flex-start; }
+  .home-intro-photo { width: 90px; aspect-ratio: 3/4; flex-shrink: 0; }
+  .home-name { font-size: 1.65rem; }
+  /* Tooltips: flip to right-aligned on mobile to avoid left-edge overflow */
+  .org-tooltip { left: auto; right: 0; min-width: 170px; max-width: 220px; }
 }
 
 /* ── Inner pages ───────────────────────────────────────── */
