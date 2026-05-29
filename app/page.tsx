@@ -25,7 +25,7 @@ export default function Home() {
             alt="Hana"
             fill
             placeholderLabel=""
-            sizes="(max-width: 580px) 90px, 155px"
+            sizes="(max-width: 580px) 140px, 185px"
             quality={92}
             priority
             objectFit="cover"
@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       <section className="home-connect">
-        <span className="home-connect-label">Online</span>
+        <span className="home-connect-label">Connect with me!</span>
         <SocialLinks />
       </section>
 

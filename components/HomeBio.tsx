@@ -12,7 +12,25 @@ type OrgProps = {
 
 function Org({ href, label, title, role, desc }: OrgProps) {
   const [open, setOpen] = useState(false);
+  const [tipStyle, setTipStyle] = useState<React.CSSProperties>({});
   const ref = useRef<HTMLSpanElement>(null);
+
+  const computeAndOpen = () => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const style: React.CSSProperties = {};
+      if (rect.left + 280 > window.innerWidth - 24) {
+        style.left = "auto";
+        style.right = "0";
+      }
+      if (rect.top < 280) {
+        style.bottom = "auto";
+        style.top = "calc(100% + 8px)";
+      }
+      setTipStyle(style);
+    }
+    setOpen(true);
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -27,7 +45,7 @@ function Org({ href, label, title, role, desc }: OrgProps) {
     <span
       ref={ref}
       className={`org-wrap${open ? " org-wrap--open" : ""}`}
-      onMouseEnter={() => setOpen(true)}
+      onMouseEnter={computeAndOpen}
       onMouseLeave={() => setOpen(false)}
     >
       <a
@@ -38,13 +56,14 @@ function Org({ href, label, title, role, desc }: OrgProps) {
         onClick={(e) => {
           if (window.matchMedia("(hover: none)").matches) {
             e.preventDefault();
-            setOpen((v) => !v);
+            if (open) setOpen(false);
+            else computeAndOpen();
           }
         }}
       >
         {label}
       </a>
-      <span className="org-tooltip" role="tooltip">
+      <span className="org-tooltip" role="tooltip" style={tipStyle}>
         <strong className="org-tooltip-name">{title}</strong>
         <span className="org-tooltip-role">{role}</span>
         <span className="org-tooltip-desc">{desc}</span>
@@ -97,7 +116,7 @@ export function HomeBio() {
         <Org
           href="https://www.scottylabs.org/"
           label="Labrador"
-          title="Labrador in ScottyLabs"
+          title="Labrador @ ScottyLabs"
           role="Director"
           desc="ScottyLabs is CMU's largest software club (1,000+ members, 8 executives). Labrador is a 100+ person committee running 20+ projects per semester; I manage the 12-person leadership team keeping the ship running."
         />

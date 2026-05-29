@@ -61,11 +61,11 @@ body {
 }
 
 /* ── Per-section accent colors ──────────────────────────── */
-[data-section="home"]     { --color-accent: #e11d48; --color-accent-soft: #f43f5e; }
+[data-section="home"]     { --color-accent: #d946ef; --color-accent-soft: #e879f9; }
 [data-section="projects"] { --color-accent: #4f46e5; --color-accent-soft: #6366f1; }
 [data-section="blog"]     { --color-accent: #d97706; --color-accent-soft: #f59e0b; }
 
-[data-theme="dark"] [data-section="home"]     { --color-accent: #fb7185; --color-accent-soft: #fda4af; }
+[data-theme="dark"] [data-section="home"]     { --color-accent: #e879f9; --color-accent-soft: #f0abfc; }
 [data-theme="dark"] [data-section="projects"] { --color-accent: #818cf8; --color-accent-soft: #a5b4fc; }
 [data-theme="dark"] [data-section="blog"]     { --color-accent: #fbbf24; --color-accent-soft: #fcd34d; }
 
@@ -73,7 +73,7 @@ a { color: var(--color-accent); text-decoration: none; }
 a:hover { color: var(--color-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
 
 .page {
-  max-width: 700px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
   position: relative;
@@ -81,8 +81,8 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 /* ── Navigation ─────────────────────────────────────────── */
 .nav-header {
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border-light);
+  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 20%, var(--color-border-light));
   position: sticky;
   top: 0;
   z-index: 20;
@@ -93,7 +93,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
-  max-width: 700px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 0.9rem 1.5rem;
 }
@@ -151,7 +151,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 /* ── Home ────────────────────────────────────────────────── */
 .page--home {
-  max-width: 700px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 3.5rem 1.5rem 5rem;
 }
@@ -199,11 +199,11 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 /* Photo */
 .home-intro-photo {
   position: relative;
-  width: 155px;
+  width: 185px;
   flex-shrink: 0;
   aspect-ratio: 3/4;
   overflow: hidden;
-  box-shadow: 6px 6px 0 var(--color-accent);
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--color-accent) 40%, transparent);
 }
 
 .home-intro-photo img { object-position: center 15% !important; }
@@ -403,7 +403,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   .home-intro { flex-direction: column; gap: 1.25rem; }
   .home-intro-photo {
     order: -1;
-    width: 115px;
+    width: 140px;
     aspect-ratio: 3/4;
     flex-shrink: 0;
   }
@@ -415,7 +415,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 .page-content { padding: 0; }
 
 .page-content .wrapper {
-  max-width: 700px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 3.5rem 1.5rem 5rem;
   background: transparent;
