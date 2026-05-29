@@ -8,7 +8,7 @@ export function BlogExternalLink({ href, children }: { href: string; children: R
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="card blog-external-link"
+      className="blog-external-link"
       onClick={() => posthog.capture("blog_link_clicked", { href })}
     >
       {children}

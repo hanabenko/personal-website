@@ -52,11 +52,11 @@ type Item = { name: string; href: string; icon: keyof typeof icons };
 const items: Item[] = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/hana-benko", icon: "linkedin" },
   { name: "GitHub", href: "https://github.com/hanabenko", icon: "github" },
+  { name: "Email", href: "mailto:benko.hana@gmail.com", icon: "email" },
   { name: "Blog", href: "https://hanabenko.github.io/", icon: "blog" },
   { name: "Pinterest", href: "https://www.pinterest.com/hana_benko/_pins/", icon: "pinterest" },
-  { name: "Email", href: "mailto:benko.hana@gmail.com", icon: "email" },
-  { name: "Buy me a coffee", href: "https://buymeacoffee.com/hanabenko", icon: "coffee" },
   { name: "Duolingo", href: "https://www.duolingo.com/profile/HanaBenko?via=share_profile_qr", icon: "duolingo" },
+  { name: "Buy me a coffee", href: "https://buymeacoffee.com/hanabenko", icon: "coffee" },
 ];
 
 export function FooterIcons() {
@@ -74,6 +74,26 @@ export function FooterIcons() {
           onClick={() => posthog.capture("social_link_clicked", { link_name: name, href })}
         >
           {icons[icon]}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export function SocialLinks() {
+  return (
+    <div className="social-links">
+      {items.map(({ name, href, icon }) => (
+        <a
+          key={icon}
+          href={href}
+          target={href.startsWith("mailto:") ? undefined : "_blank"}
+          rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+          className="social-link-btn"
+          onClick={() => posthog.capture("social_link_clicked", { link_name: name, href })}
+        >
+          <span className="social-link-icon">{icons[icon]}</span>
+          <span>{name}</span>
         </a>
       ))}
     </div>

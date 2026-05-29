@@ -142,3 +142,4 @@ vite.config.ts.timestamp-*
 package-lock.jsoneve 
 package.json
 .gitignore
+public/hana1.png

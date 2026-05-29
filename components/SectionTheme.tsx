@@ -11,5 +11,9 @@ function getSection(pathname: string): string {
 export function SectionTheme({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const section = getSection(pathname);
-  return <div data-section={section}>{children}</div>;
+  return (
+    <div className="section-canvas" data-section={section}>
+      {children}
+    </div>
+  );
 }
