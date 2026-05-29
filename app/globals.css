@@ -283,9 +283,28 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   white-space: normal;
 }
 
-.org-wrap:hover .org-tooltip {
+/* Touch devices: tooltip needs pointer-events so Visit link is tappable */
+@media (hover: none) {
+  .org-tooltip { pointer-events: auto; }
+}
+
+.org-wrap--open .org-tooltip {
   visibility: visible;
   opacity: 1;
+}
+
+.org-tooltip-visit {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (hover: none) {
+  .org-tooltip-visit { display: inline; }
 }
 
 .org-tooltip-name {

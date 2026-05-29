@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+
 type OrgProps = {
   href: string;
   label: string;
@@ -7,15 +11,52 @@ type OrgProps = {
 };
 
 function Org({ href, label, title, role, desc }: OrgProps) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: PointerEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [open]);
+
   return (
-    <span className="org-wrap">
-      <a href={href} target="_blank" rel="noopener noreferrer" className="org-link">
+    <span
+      ref={ref}
+      className={`org-wrap${open ? " org-wrap--open" : ""}`}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="org-link"
+        onClick={(e) => {
+          if (window.matchMedia("(hover: none)").matches) {
+            e.preventDefault();
+            setOpen((v) => !v);
+          }
+        }}
+      >
         {label}
       </a>
       <span className="org-tooltip" role="tooltip">
         <strong className="org-tooltip-name">{title}</strong>
         <span className="org-tooltip-role">{role}</span>
         <span className="org-tooltip-desc">{desc}</span>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="org-tooltip-visit"
+          onClick={() => setOpen(false)}
+        >
+          Visit ↗
+        </a>
       </span>
     </span>
   );
@@ -81,7 +122,6 @@ export function HomeBio() {
       <p className="home-lead home-lead--muted">
         I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until December 2027, when I expect to graduate.
         Outside of school, I like beautiful sights, sports, and making things.
-
       </p>
     </>
   );
