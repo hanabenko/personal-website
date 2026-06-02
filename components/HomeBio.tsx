@@ -19,10 +19,18 @@ function Org({ href, label, title, role, desc }: OrgProps) {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       const style: React.CSSProperties = {};
-      if (rect.left + 280 > window.innerWidth - 24) {
-        style.left = "auto";
-        style.right = "0";
-      }
+
+      const tipWidth = 260;
+      const margin = 12;
+      const vw = window.innerWidth;
+      // Ideal: align left edge of tooltip with left edge of word
+      let vpLeft = rect.left;
+      // Shift left if overflowing right edge
+      if (vpLeft + tipWidth > vw - margin) vpLeft = vw - margin - tipWidth;
+      // Clamp so it never goes off the left edge
+      if (vpLeft < margin) vpLeft = margin;
+      style.left = `${vpLeft - rect.left}px`;
+
       if (rect.top < 280) {
         style.bottom = "auto";
         style.top = "calc(100% + 8px)";

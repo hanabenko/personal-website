@@ -408,7 +408,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
     flex-shrink: 0;
   }
   .home-name { font-size: 1.65rem; }
-  .org-tooltip { left: auto; right: 0; min-width: 170px; max-width: 220px; }
+  .org-tooltip { min-width: 170px; max-width: 220px; }
 }
 
 /* ── Inner pages ───────────────────────────────────────── */
