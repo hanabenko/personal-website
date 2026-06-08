@@ -5,6 +5,12 @@ import { getAllPostMeta, getPostBySlug } from "@/lib/posts";
 import CommentsSection from "@/app/components/CommentsSection";
 import PostFooter from "@/app/components/PostFooter";
 import TableOfContents from "@/app/components/TableOfContents";
+import ReadingProgress from "@/app/components/ReadingProgress";
+import GlowCursor from "@/app/components/GlowCursor";
+import BackToTop from "@/app/components/BackToTop";
+import ShareButton from "@/app/components/ShareButton";
+import ViewCounter from "@/app/components/ViewCounter";
+import PostEnhancer from "@/app/components/PostEnhancer";
 import "katex/dist/katex.min.css";
 
 export async function generateStaticParams() {
@@ -50,14 +56,21 @@ export default async function BlogPostPage({
 
   return (
     <div className={`page page--post${post.toc.length >= 2 ? " page--post-with-toc" : ""}`}>
-      <Link href="/blog" className="post-back">
-        ← Blog
-      </Link>
+      <ReadingProgress />
+      <GlowCursor />
+      <BackToTop />
+
+      <div className="post-top-bar">
+        <Link href="/blog" className="post-back">← Blog</Link>
+        <ShareButton />
+      </div>
 
       <header className="post-header">
         <h1 className="post-title">{post.title}</h1>
         <div className="post-meta">
           <time className="post-meta-date">{formatDate(post.date)}</time>
+          <span className="post-reading-time">{post.readingTime} min read</span>
+          <ViewCounter slug={slug} />
           {(post.categories?.length || post.tags?.length) ? (
             <div className="blog-item-chips">
               {post.categories?.map((c) => (
@@ -75,10 +88,14 @@ export default async function BlogPostPage({
       </header>
 
       <div className="post-body">
-        <article
-          className="prose"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="post-article-wrap">
+          <article
+            id="post-article"
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+          <PostEnhancer articleId="post-article" />
+        </div>
         {post.toc.length >= 2 && (
           <aside className="post-toc-sidebar">
             <TableOfContents toc={post.toc} />

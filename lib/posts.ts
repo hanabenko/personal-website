@@ -34,6 +34,12 @@ export interface TocEntry {
 export interface Post extends PostMeta {
   content: string;
   toc: TocEntry[];
+  readingTime: number;
+}
+
+function calcReadingTime(markdown: string): number {
+  const words = markdown.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 function extractText(node: Element): string {
@@ -136,5 +142,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     math: data.math,
     content: html,
     toc,
+    readingTime: calcReadingTime(content),
   };
 }
