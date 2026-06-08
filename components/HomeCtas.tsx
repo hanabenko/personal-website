@@ -3,7 +3,7 @@
 import Link from "next/link";
 import posthog from "posthog-js";
 
-export function HomeCtas({ blogUrl }: { blogUrl: string }) {
+export function HomeCtas() {
   return (
     <div className="home-ctas">
       <Link
@@ -13,15 +13,13 @@ export function HomeCtas({ blogUrl }: { blogUrl: string }) {
       >
         Projects →
       </Link>
-      <a
-        href={blogUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href="/blog"
         className="home-cta-btn"
-        onClick={() => posthog.capture("home_cta_clicked", { label: "Blog", href: blogUrl })}
+        onClick={() => posthog.capture("home_cta_clicked", { label: "Blog", href: "/blog" })}
       >
         Blog →
-      </a>
+      </Link>
     </div>
   );
 }

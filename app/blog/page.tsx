@@ -1,32 +1,27 @@
-import { BlogExternalLink } from "@/components/BlogExternalLink";
+import type { Metadata } from "next";
+import { getAllPostMeta } from "@/lib/posts";
+import BlogClient from "@/app/components/BlogClient";
 
-export const metadata = {
-  title: "Blog | Hana Benko",
-  description: "Thoughts, projects, and things I'm curious about.",
+export const metadata: Metadata = {
+  title: "Blog — Hana Benko",
+  description: "Writing on tech, math, games, and life.",
 };
 
-const BLOG_URL = "https://hanabenko.github.io";
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string; tag?: string }>;
+}) {
+  const { category, tag } = await searchParams;
+  const posts = getAllPostMeta();
 
-export default function BlogPage() {
   return (
-    <div className="page-content" aria-label="Content">
-      <div className="wrapper">
-        <article className="post">
-          <header className="post-header">
-            <h1 className="post-title">Blog</h1>
-          </header>
-
-          <div className="post-content">
-            <p className="post-intro">
-              Thoughts, projects, and things I&apos;m curious about. My blog lives on GitHub Pages.
-            </p>
-
-            <BlogExternalLink href={BLOG_URL}>
-              Read all posts at hanabenko.github.io →
-            </BlogExternalLink>
-          </div>
-        </article>
-      </div>
+    <div className="page page--blog">
+      <header className="blog-header">
+        <h1 className="blog-title">Blog</h1>
+        <p className="blog-subtitle">Writing on tech, math, games, and life.</p>
+      </header>
+      <BlogClient posts={posts} initialCategory={category} initialTag={tag} />
     </div>
   );
 }

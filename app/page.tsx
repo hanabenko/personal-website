@@ -3,8 +3,6 @@ import { SocialLinks } from "@/components/FooterIcons";
 import { HomeCtas } from "@/components/HomeCtas";
 import { HomeBio } from "@/components/HomeBio";
 
-const BLOG_URL = "https://hanabenko.github.io";
-
 export default function Home() {
   return (
     <div className="page--home">
@@ -16,7 +14,7 @@ export default function Home() {
             Hana <span className="home-name-accent">Benko</span>
           </h1>
           <HomeBio />
-          <HomeCtas blogUrl={BLOG_URL} />
+          <HomeCtas />
         </div>
 
         <aside className="home-intro-photo">
