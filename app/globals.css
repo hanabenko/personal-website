@@ -839,6 +839,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 @media (max-width: 680px) {
   .blog-layout { grid-template-columns: 1fr; }
+  .blog-sidebar { order: -1; }
 }
 
 /* Sidebar */
@@ -846,8 +847,6 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: sticky;
-  top: 5rem;
 }
 
 .blog-search {
