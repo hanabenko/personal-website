@@ -40,13 +40,13 @@ export function ProjectCard({
             onClick={() => posthog.capture("project_image_clicked", { project_title: title, href: imageHref })}
           >
             {image
-              ? <Image className="project-image" src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 50vw" quality={90} />
+              ? <Image className="project-image" src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 50vw" quality={92} />
               : <div className="project-image project-image--placeholder" aria-hidden>Project</div>
             }
           </a>
         ) : (
           image
-            ? <Image className="project-image" src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 50vw" quality={90} />
+            ? <Image className="project-image" src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 50vw" quality={92} />
             : <div className="project-image project-image--placeholder" aria-hidden>Project</div>
         )}
       </div>
