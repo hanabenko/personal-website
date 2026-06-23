@@ -101,13 +101,13 @@ export function HomeBio() {
           role="Computer Science Student"
           desc="Studying CS and ML in Pittsburgh. Expected graduation December 2027."
         />
-        , soon interning at{" "}
+        , currently interning at{" "}
         <Org
           href="https://daytona.io"
           label="Daytona"
           title="Daytona"
           role="Go-to-Market Intern"
-          desc="Open-source dev environment platform. I will work on the social and technical side of partnerships and collaborations around compute infrastructure for AI agent workflows."
+          desc="Open-source dev environment platform. I work on the social and technical side of partnerships and collaborations around compute infrastructure for AI agent workflows."
         />
         {" "}and doing HCI research at{" "}
         <Org
