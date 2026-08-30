@@ -13,13 +13,6 @@ export function HomeCtas() {
       >
         Projects →
       </Link>
-      <Link
-        href="/blog"
-        className="home-cta-btn"
-        onClick={() => posthog.capture("home_cta_clicked", { label: "Blog", href: "/blog" })}
-      >
-        Blog →
-      </Link>
     </div>
   );
 }
