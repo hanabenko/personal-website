@@ -93,29 +93,29 @@ export function HomeBio() {
   return (
     <>
       <p className="home-lead">
-        I&apos;m a CS+ML student at{" "}
+        I&apos;m a junior studying CS at{" "}
         <Org
           href="https://www.cmu.edu/"
           label="Carnegie Mellon"
           title="Carnegie Mellon University"
           role="Computer Science Student"
-          desc="Studying CS and ML in Pittsburgh. Expected graduation December 2027."
+          desc="Concentrating in Machine Learning in Pittsburgh. Expected graduation Spring 2028."
         />
-        , currently interning at{" "}
+        , concentrating in ML. I previously did research at{" "}
+        <Org
+          href="https://www.hcii.cmu.edu/"
+          label="HCII"
+          title="Human-Computer Interaction Institute"
+          role="Former Researcher"
+          desc="CMU's HCI research lab. I worked on projects at the intersection of education and AI."
+        />
+        {" "}and interned this past summer at{" "}
         <Org
           href="https://daytona.io"
           label="Daytona"
           title="Daytona"
           role="Go-to-Market Intern"
-          desc="Open-source dev environment platform. I work on the social and technical side of partnerships and collaborations around compute infrastructure for AI agent workflows."
-        />
-        {" "}and doing HCI research at{" "}
-        <Org
-          href="https://www.hcii.cmu.edu/"
-          label="HCII"
-          title="Human-Computer Interaction Institute"
-          role="Researcher"
-          desc="CMU's HCI research lab. I work on projects at the intersection of education and AI."
+          desc="Open-source dev environment platform. I worked on the social and technical side of partnerships and collaborations around compute infrastructure for AI agent workflows."
         />
         .
       </p>
@@ -147,7 +147,7 @@ export function HomeBio() {
         .
       </p>
       <p className="home-lead">
-        I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until December 2027, when I expect to graduate.
+        I was born and raised in Croatia, and my family moved to the East Bay in 2018. I now spend most of my year in Pittsburgh; at least until Spring 2028, when I expect to graduate.
         Outside of school, I like beautiful sights, sports, and making things.
       </p>
     </>
