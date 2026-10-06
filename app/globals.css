@@ -11,6 +11,7 @@
   --color-muted: #506572;
   --color-accent: #284b60;
   --color-accent-soft: #17617f;
+  --color-bio-link: #315f7d;
   --color-border: #284b60;
   --color-border-light: #cdd9df;
   --color-nav-bg: #f7f9fa;
@@ -34,6 +35,7 @@
   --color-muted: #aeb8bd;
   --color-accent: #d6e0e5;
   --color-accent-soft: #f2f7f9;
+  --color-bio-link: #a9cbe0;
   --color-border: #d6e0e5;
   --color-border-light: #343e43;
   --color-nav-bg: #090b0c;
@@ -482,7 +484,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 }
 
 .org-link {
-  color: var(--color-text);
+  color: var(--color-bio-link);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--color-accent);
@@ -491,7 +493,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 }
 
 .org-link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-soft);
   text-decoration-style: solid;
   text-decoration: underline;
 }
