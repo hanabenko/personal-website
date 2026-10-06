@@ -17,9 +17,9 @@ export default async function BlogPage({
 
   return (
     <div className="page page--blog">
-      <header className="blog-header">
-        <h1 className="blog-title">Blog</h1>
-        <p className="blog-subtitle">Writing on tech, math, games, and life.</p>
+      <header className="projects-header blog-header">
+        <h1>Blog</h1>
+        <p>Writing on tech, math, games, and life.</p>
       </header>
       <BlogClient posts={posts} initialCategory={category} initialTag={tag} />
     </div>
