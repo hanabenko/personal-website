@@ -1,44 +1,45 @@
+import Link from "next/link";
 import { Photo } from "@/components/Photo";
 import { SocialLinks } from "@/components/FooterIcons";
-import { HomeCtas } from "@/components/HomeCtas";
 import { HomeBio } from "@/components/HomeBio";
+import { PaintingIntro } from "@/components/PaintingIntro";
 
 export default function Home() {
   return (
     <div className="page--home">
+      <PaintingIntro />
 
-      {/* Intro: bio left, portrait right */}
-      <div className="home-intro">
-        <div className="home-intro-text">
-          <h1 className="home-name">
-            Hana <span className="home-name-accent">Benko</span>
-          </h1>
-          <HomeBio />
-          <HomeCtas />
-        </div>
+      <div className="home-after-painting">
+        <section id="about" className="home-about-grid" aria-label="About Hana Benko">
+          <div className="home-about-bio">
+            <HomeBio />
+          </div>
 
-        <aside className="home-intro-photo">
-          <Photo
-            src="/hana.png"
-            alt="Hana"
-            fill
-            placeholderLabel=""
-            sizes="(max-width: 580px) 140px, 185px"
-            quality={92}
-            priority
-            objectFit="cover"
-          />
-        </aside>
+          <nav className="home-about-links" aria-label="More from Hana">
+            <div className="home-about-internal-links">
+              <Link href="/projects">Projects</Link>
+              <Link href="/blog">Writing</Link>
+            </div>
+            <SocialLinks />
+          </nav>
+
+          <aside className="home-about-photo">
+            <Photo
+              src="/hana.png"
+              alt="Portrait of Hana Benko"
+              fill
+              placeholderLabel=""
+              sizes="(max-width: 700px) 45vw, 260px"
+              quality={92}
+              objectFit="cover"
+            />
+          </aside>
+        </section>
+
+        <footer className="home-footer">
+          <p className="home-footer-copy">© {new Date().getFullYear()} Hana Benko.</p>
+        </footer>
       </div>
-
-      <section className="home-connect">
-        <span className="home-connect-label">Connect with me!</span>
-        <SocialLinks />
-      </section>
-
-      <footer className="home-footer">
-        <p className="home-footer-copy">© {new Date().getFullYear()} Hana Benko.</p>
-      </footer>
     </div>
   );
 }

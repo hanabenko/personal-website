@@ -7,6 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/#about", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -14,7 +15,7 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="nav-header">
+    <header className={`nav-header${pathname === "/" ? " nav-header--home" : ""}`}>
       <nav className="nav-inner">
         {pathname === "/" ? (
           <span className="nav-logo">Hana Benko</span>
