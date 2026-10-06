@@ -1,0 +1,19 @@
+app/globals.css
+  s_18c350f538729e::t_854c34d1c33bfa 14,38,487,496
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "96987e461999d48d33f6f6cadd8500aa82c27ffa",
+  "prompts": {},
+  "sessions": {
+    "s_18c350f538729e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e45a-81cf-7502-8d81-2420fc5c71ce",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "hanabenko <benko.hana@gmail.com>"
+    }
+  }
+}
