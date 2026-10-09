@@ -19,12 +19,15 @@ export function PaintingIntro() {
       frame = 0;
       if (reducedMotion.matches) {
         scene.style.setProperty("--painting-reveal", "1");
+        scene.style.setProperty("--painting-name-reveal", "1");
         return;
       }
       const travel = Math.max(1, scene.offsetHeight - window.innerHeight);
       const progress = Math.min(1, Math.max(0, -scene.getBoundingClientRect().top / travel));
       const reveal = Math.min(1, Math.max(0, (progress - 0.04) / 0.68));
+      const nameReveal = 0.58 + 0.42 * Math.min(1, progress / 0.32);
       scene.style.setProperty("--painting-reveal", reveal.toFixed(3));
+      scene.style.setProperty("--painting-name-reveal", nameReveal.toFixed(3));
     };
 
     const scheduleUpdate = () => {
@@ -46,7 +49,6 @@ export function PaintingIntro() {
   return (
     <section ref={sceneRef} className="painting-scene" aria-label="Introduction">
       <figure className="painting-frame">
-        <div className="gallery-light" aria-hidden="true" />
         <div className="painting-inner">
           <div className="painting-artwork">
             <Image

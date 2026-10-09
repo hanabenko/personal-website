@@ -182,6 +182,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 .painting-scene {
   --painting-reveal: 0;
+  --painting-name-reveal: 0.58;
   position: relative;
   height: 155svh;
   background: var(--gallery-wall);
@@ -193,41 +194,10 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   width: 100%;
   height: 100svh;
   margin: 0;
-  padding: clamp(5rem, 9svh, 7rem) clamp(1.25rem, 5vw, 5rem) 2rem;
+  padding: clamp(4rem, 7svh, 6rem) clamp(1.25rem, 5vw, 5rem) 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.gallery-light {
-  position: absolute;
-  top: clamp(4.75rem, 8.5svh, 6.5rem);
-  left: 50%;
-  width: 6.5rem;
-  height: 0.22rem;
-  transform: translateX(-50%);
-  border-radius: 1px;
-  background: #111418;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), 0 3px 8px rgba(19, 39, 50, 0.12);
-  pointer-events: none;
-}
-
-[data-theme="dark"] .gallery-light { outline: 1px solid #3f4a4f; }
-
-.gallery-light::after {
-  content: "";
-  position: absolute;
-  top: 0.22rem;
-  left: 50%;
-  width: min(68vw, 42rem);
-  height: min(32svh, 19rem);
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12) 48%, transparent 78%);
-  filter: blur(15px);
-}
-
-[data-theme="dark"] .gallery-light::after {
-  background: radial-gradient(ellipse at 50% 0%, rgba(208, 220, 224, 0.19), rgba(208, 220, 224, 0.06) 48%, transparent 78%);
 }
 
 .painting-inner {
@@ -290,7 +260,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   text-align: center;
   text-wrap: balance;
   text-shadow: 0 1px 20px rgba(237, 237, 222, 0.82);
-  opacity: var(--painting-reveal);
+  opacity: var(--painting-name-reveal);
 }
 
 .painting-credit {
@@ -640,7 +610,6 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
   .nav-logo { flex-basis: 100%; }
   .nav-header .theme-toggle, .nav-header .theme-toggle-placeholder { position: absolute; top: 0.7rem; right: 1.25rem; }
   .painting-frame { padding: 6.25rem 1.25rem 2rem; }
-  .gallery-light { top: 7.75rem; width: 5rem; }
   .painting-artwork { height: min(67svh, 630px); aspect-ratio: auto; }
   .painting-image { object-position: 35% 50%; }
   .painting-name { font-size: clamp(3.1rem, 15vw, 5rem); max-width: 8ch; }
@@ -659,7 +628,7 @@ a:hover { color: var(--color-accent-soft); text-decoration: underline; text-unde
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .painting-scene { --painting-reveal: 1; height: 100svh; }
+  .painting-scene { --painting-reveal: 1; --painting-name-reveal: 1; height: 100svh; }
 }
 
 /* ── Inner pages ───────────────────────────────────────── */

@@ -5,9 +5,7 @@ import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/#about", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -17,15 +15,11 @@ export function Nav() {
   return (
     <header className={`nav-header${pathname === "/" ? " nav-header--home" : ""}`}>
       <nav className="nav-inner">
-        {pathname === "/" ? (
-          <span className="nav-logo">Hana Benko</span>
-        ) : (
-          <Link href="/" className="nav-logo">
-            Hana Benko
-          </Link>
-        )}
+        <Link href="/" className="nav-logo">
+          Hana Benko
+        </Link>
         {links.map(({ href, label }) => {
-          const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+          const isActive = pathname === href || pathname.startsWith(`${href}/`);
           return (
             <Link
               key={href}
